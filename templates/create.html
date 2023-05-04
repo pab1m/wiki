@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{#    {{ title }}#}
+    Створення
+{% endblock %}
+
+
+{% block content %}
+    <br><br>
+    <form method="post" enctype="multipart/form-data">
+        <br><br>
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <button type="submit" class="btn btn-success">Додати автора</button>
+    </form>
+{% endblock %}
+
+
+
+
+
+
+
+{#{% block content %}#}
+{##}
+{#<form action="{% url 'create.submit' %}" method="POST" enctype="multipart/form-data">#}
+{#{% csrf_token %}#}
+{#    <h3 class="text-center">Додавання автора</h3>#}
+{#    <div class="mb-3">#}
+{#    <input type="text" class="form-control" name="title">#}
+{#  </div>#}
+{#  <div class="mb-3">#}
+{#    <textarea name="bio" class="form-control"></textarea>#}
+{#  </div>#}
+{#  <div class="mb-3">#}
+{#    <input type="file" name="photo" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" accept="image/*">#}
+{#  </div>#}
+{#  <button type="submit" class="btn btn-primary">Додати автора</button>#}
+{#</form>#}
+{#{% endblock %}#}

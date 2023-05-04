@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    {{ title }}
+{% endblock %}
+
+{#{% block content %}#}
+{#    <br><br>#}
+{#    <form method="post" enctype="multipart/form-data">#}
+{#        <br><br>#}
+{#        {% csrf_token %}#}
+{#        {{ form.as_p }}#}
+{##}
+{#        <button type="submit" class="btn btn-success">Додати автора</button>#}
+{#    </form>#}
+{#{% endblock %}#}
+
+{% block content %}
+    <br><br>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <h3 class="text-center">Авторизація</h3>
+        <div class="mb-3">
+            <label for="first_name" class="form-label">Username: </label>
+            <input type="text" class="form-control" name="username" aria-describedby="first_name">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Password: </label>
+            <input type="password" name="password" class="form-control" id="exampleInputPassword1">
+        </div>
+        <button type="submit" class="btn btn-primary">Увійти</button>
+        <br>
+        <div>
+            {% for message in messages %}
+                <h5>{{ message }}</h5>
+            {% endfor %}
+        </div>
+    </form>
+{% endblock %}
